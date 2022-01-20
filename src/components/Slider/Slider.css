@@ -1,0 +1,239 @@
+.slider-wrapper {
+	position: relative;
+	height: 120vh;
+	overflow: hidden;
+	transition: all .3s;
+	padding-top: 12vh;
+}
+
+.slider-content {
+	/* position: absolute; 
+	left: 0;
+	top: 0;*/
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 8;
+	animation: zoomOut 1.5s ease;
+	transition: all .3s;
+}
+
+.image-wrapper {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	background-color: lavender;
+}
+
+.slider-content img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slider-item {
+	position: absolute;
+	width: 85%;
+	padding: 15px;
+	right: 50%;
+	top: 50%;
+	transform: translate(50%, -50%);
+}
+
+.caption {
+	width: 45%;
+	padding: 15px;
+	border-radius: 5px;
+	transition: all 1s;
+	animation: showcaption 1.5s;
+	background-color: rgba(225, 225, 225, .1);
+	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
+.caption h1 {
+	font-size: 45px;
+}
+
+.caption p {
+	font-size: 18px;
+	margin: 0px 0px 15px 0px;
+}
+
+/* .caption a {
+	display: inline-block;
+	padding: 10px 30px;
+	text-decoration: none;
+	background-color: #000;
+	color: #fff;
+} */
+
+.button-controls {
+	position: absolute;
+	width: 100%;
+	padding: 15px;
+	right: 50%;
+	top: 50%;
+	transform: translate(50%, -50%);
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+}
+
+.prev,
+.next {
+	display: block;
+	color: #fff;
+	font-size: 40px;
+	cursor: pointer;
+	animation: zoomOut .5s;
+	animation-delay: 1.5s;
+	transition: all .5s;
+	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
+.prev:hover,
+.next:hover {
+	transition: all .5s;
+	color: #00f7ff;
+}
+
+.indicator-controls {
+	position: absolute;
+	width: 30%;
+	padding: 15px;
+	right: 50%;
+	bottom: 0;
+	transform: translate(50%, -50%);
+	gap: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	z-index: 9;
+	transition: all .3s;
+}
+
+.controls-stretch {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	background-color: transparent;
+	transition: all .5s;
+}
+
+.controls-stretch__width {
+	position: absolute;
+	top: 2px;
+	height: 5px;
+	overflow: hidden;
+	border-radius: 4px;
+	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%); 
+	background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); 
+	transition: all 1s;
+}
+
+.scroll-indicator__span {
+	position: absolute;
+	top: 0;
+	right: -4px;
+	display: block;
+	width: 11px;
+	border-radius: 10px;
+	height: 100%;
+	padding: 2px;
+	background:#b7331c;
+	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
+.indicator {
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 9px;
+	border-radius: 25px;
+	cursor: pointer;
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+	transition: all 2s;
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	bottom: 27px;
+	right: -29px;
+	width: 80px;
+	height: 55px;
+	overflow: hidden;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
+.tooltip img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+.indicator:hover .tooltip {
+	display: block;
+}
+
+.indicator:hover {
+	transition: all .5s;
+	background-color: #b71c1c !important;
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 540px) {
+	.indicator-controls {
+		width: 70%;
+		padding: initial;
+		margin-bottom: 10px;
+	}
+
+	.slider-item {
+		width: 100%;
+		top: 75%;
+	}
+
+	.caption {
+		width: 100%;
+	}
+
+	.caption h1 {
+		font-size: 34px;
+	}
+
+	.caption p {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 540px) and (max-width: 780px) {
+	.caption {
+		width: 70%;
+	}
+
+	.caption h1 {
+		font-size: 34px;
+	}
+
+	.caption p {
+		font-size: 16px;
+	}
+
+	.indicator-controls {
+		width: 50%;
+		padding: initial;
+		margin-bottom: 10px;
+	}
+}
