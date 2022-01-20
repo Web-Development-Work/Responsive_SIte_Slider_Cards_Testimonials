@@ -1,4 +1,5 @@
 import './App.css';
+import Ffour from './components/Footer/Ffour';
 import Fone from './components/Footer/Fone';
 import Fthree from './components/Footer/Fthree';
 import Ftwo from './components/Footer/Ftwo';
@@ -21,6 +22,7 @@ function App() {
         <Fone/>
         <Ftwo/>
         <Fthree/>
+        <Ffour/>
     </div>
   );
 }

@@ -1,7 +1,4 @@
 body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     background-color: rgb(148, 148, 148);
     font-family: 'Open Sans'
 }
